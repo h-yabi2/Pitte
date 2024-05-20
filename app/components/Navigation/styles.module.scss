@@ -1,0 +1,17 @@
+.root {
+    padding: 25px;
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    width: 100%;
+    transform: translateX(-50%);
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        cursor: pointer;
+        list-style: none;
+    }    
+}
+  
