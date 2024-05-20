@@ -25,6 +25,8 @@ nav {
   bottom: 0;
   width: 50vw;
   background: rgba(255, 255, 255, 0.9);
+  border: 10px solid;
+  border-image: linear-gradient(to right, #66FE9B, #03E5FC) 1;
   /* background: linear-gradient(to right, #66FE9B, #03E5FC); */
   /* border: 5px solid red; */
 }
