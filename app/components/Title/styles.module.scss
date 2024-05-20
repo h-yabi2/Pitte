@@ -13,4 +13,12 @@
     color: #333;
     font-size: 1.125rem;
   }
+  &.white {
+    background: none;
+    background-clip: text;
+    color: #fff;
+    span {
+      color: #fff;
+    }
+  }
 }
