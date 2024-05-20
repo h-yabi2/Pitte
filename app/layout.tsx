@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Zen_Kaku_Gothic_New } from "next/font/google";
 import { Header } from "@/app/components/Header";
+import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const zenKakuGothicNew = Zen_Kaku_Gothic_New({ 
+  subsets: ["cyrillic"],
+  weight: ["400", "700"],
+});
 
 export const metadata: Metadata = {
   title: "セルフ脱毛サロン Pitte",
@@ -17,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={inter.className}>
+      <body className={zenKakuGothicNew.className}>
         <Header />
         {children}
         </body>
