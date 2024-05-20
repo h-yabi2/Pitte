@@ -14,7 +14,7 @@ nav {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 50vw;
+  width: 100vw;
   height: 100vh;
 }
 
@@ -23,7 +23,7 @@ nav {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 50vw;
+  width: 100vw;
   background: rgba(255, 255, 255, 0.9);
   border: 10px solid;
   border-image: linear-gradient(to right, #66FE9B, #03E5FC) 1;
@@ -53,8 +53,10 @@ li {
 ul {
   padding: 25px;
   position: absolute;
+  left: 50%;
   top: 100px;
-  width: 230px;
+  transform: translateX(-50%);
+  width: 100%;
 }
 
 li {
@@ -62,6 +64,7 @@ li {
   margin-bottom: 20px;
   display: flex;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
 

@@ -24,7 +24,7 @@ const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
 export const MenuItem = ({ i }: { i: number }) => {
 //   const style = { border: `2px solid ${colors[i]}` };
   return (
-    <div>
+    <>
         <motion.li
         variants={variants}
         whileHover={{ scale: 1.1 }}
@@ -53,6 +53,6 @@ export const MenuItem = ({ i }: { i: number }) => {
         >
             <Link href="#about">選ばれる4つの理由</Link>
         </motion.li>                
-    </div>    
+    </>    
   );
 };

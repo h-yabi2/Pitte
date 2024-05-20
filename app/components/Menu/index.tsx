@@ -4,8 +4,11 @@ import * as React from "react";
 import { useRef } from "react";
 import { motion, useCycle } from "framer-motion";
 import { useDimensions } from "@/app/hooks/use-dimensions";
-import { MenuToggle } from "./MenuToggle";
-import { Navigation } from "./Navigation";
+import { MenuToggle } from "@/app/components/MenuToggle";
+import { Navigation } from "@/app/components/Navigation";
+
+import styles from './styles.module.scss'
+const s = styles;
 
 const sidebar = {
     open: (height = 1000) => ({
@@ -38,6 +41,7 @@ export const Menu = () => {
       animate={isOpen ? "open" : "closed"}
       custom={height}
       ref={containerRef}
+      className={isOpen ? "is-open" : "is-closed"}
     >
       <motion.div className="background" variants={sidebar} />
       <Navigation />
