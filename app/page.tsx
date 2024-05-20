@@ -1,10 +1,11 @@
-import { KeyVisual } from '@/app/components/KeyVisual';
+import { KeyVisual } from '@/app/components/KeyVisual'
+import { Contents } from '@/app/components/Contents'
 
 export default function Home() {
   return (
-    <main>
+    <>
       <KeyVisual />
-      test
-    </main>
-  );
+      <Contents />
+    </>
+  )
 }
