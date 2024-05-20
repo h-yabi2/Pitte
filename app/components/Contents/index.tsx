@@ -2,6 +2,8 @@ import React from 'react'
 import styles from './styles.module.scss'
 const s = styles
 
+import { Title } from '@/app/components/Title'
+
 export const Contents: React.FC = () => {
   return (
     <main className={'px-4 mt-20'}>
@@ -14,6 +16,7 @@ export const Contents: React.FC = () => {
         <span className="text-highlight">業務用の高品質な脱毛器</span>
         が格安で使い放題◎
       </h1>
+      <Title title="Feature" subTitle="Pitteの特徴" />
     </main>
   )
 }
