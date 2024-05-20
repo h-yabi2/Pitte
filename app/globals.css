@@ -8,42 +8,6 @@
   }
 }
 
-
-nav {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
-}
-
-.background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 100vw;
-  background: rgba(255, 255, 255, 0.9);
-  border: 10px solid;
-  border-image: linear-gradient(to right, #66FE9B, #03E5FC) 1;
-  /* background: linear-gradient(to right, #66FE9B, #03E5FC); */
-  /* border: 5px solid red; */
-}
-
-button {
-  outline: none;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  top: 17px;
-  right: 15px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: transparent;
-}
-
 ul,
 li {
   margin: 0;

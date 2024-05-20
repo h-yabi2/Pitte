@@ -41,11 +41,13 @@ export const Menu = () => {
       animate={isOpen ? "open" : "closed"}
       custom={height}
       ref={containerRef}
-      className={isOpen ? "is-open" : "is-closed"}
+      className={`${s.nav}`}
     >
-      <motion.div className="background" variants={sidebar} />
-      <Navigation />
       <MenuToggle toggle={() => toggleOpen()} />
+      <div className={`${s.inner} ${isOpen ? s.isOpen : s.isClosed}`}> 
+        <motion.div className={s.background} variants={sidebar} />
+        <Navigation />
+      </div>
     </motion.nav>
   );
 };

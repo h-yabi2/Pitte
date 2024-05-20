@@ -1,6 +1,9 @@
 import * as React from "react";
 import { motion, SVGMotionProps } from "framer-motion";
 
+import styles from './styles.module.scss'
+const s = styles;
+
 const Path = (props: SVGMotionProps<SVGPathElement>) => (
   <motion.path
     fill="transparent"
@@ -12,7 +15,7 @@ const Path = (props: SVGMotionProps<SVGPathElement>) => (
 );
 
 export const MenuToggle = ({ toggle }: { toggle: () => void }) => (
-  <button onClick={toggle}>
+  <button onClick={toggle} className={s.button}>
     <div className="flex justify-center items-center relative w-full h-full">
         <svg width="23" height="23" viewBox="0 0 23 23">
         <Path
