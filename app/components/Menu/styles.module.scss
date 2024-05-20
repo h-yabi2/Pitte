@@ -1,41 +1,48 @@
+.root {
+  position: fixed;
+  z-index: 1000;
+  top: 15px;
+  right: 15px;
+}
+
 .nav {
-    position: relative;
-    width: 50px;
-    height: 50px;
+  position: relative;
+  width: 50px;
+  height: 50px;
 }
 
 .inner {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    &.isOpen {
-        pointer-events: auto;
-    }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  &.isOpen {
+    pointer-events: auto;
+  }
 }
 
 .button {
-    outline: none;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: 17px;
-    right: 15px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 17px;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: transparent;
 }
 
 .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 100vw;
-    background: rgba(255, 255, 255, 0.9);
-    border: 10px solid;
-    border-image: linear-gradient(to right, #66FE9B, #03E5FC) 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  background: rgba(255, 255, 255, 0.9);
+  border: 10px solid;
+  border-image: linear-gradient(to right, #66fe9b, #03e5fc) 1;
 }
