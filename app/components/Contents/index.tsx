@@ -3,6 +3,7 @@ import styles from './styles.module.scss'
 const s = styles
 
 import { Title } from '@/app/components/Title'
+import { Feature } from '@/app/components/Feature'
 
 export const Contents: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ export const Contents: React.FC = () => {
         が格安で使い放題◎
       </h1>
       <Title title="Feature" subTitle="Pitteの特徴" />
+      <Feature />
     </main>
   )
 }
