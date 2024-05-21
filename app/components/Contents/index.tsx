@@ -7,7 +7,7 @@ import { Feature } from '@/app/components/Feature'
 
 export const Contents: React.FC = () => {
   return (
-    <main className={'px-4 mt-20'}>
+    <main className={'px-4'}>
       <h1 className={s.title}>
         <span className="text-highlight">
           『東京・綾瀬駅』に完全無人のセルフ脱毛サロン
