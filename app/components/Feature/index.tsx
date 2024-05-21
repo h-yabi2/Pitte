@@ -69,9 +69,11 @@ export const Feature: React.FC = () => {
           viewport={{ once: true, amount: 0.2 }}
           variants={itemVariants}
         >
-          <Image src={item.img} width={370} height={260} alt="" />
-          <h3 className={s.title}>{item.title}</h3>
-          <p className={s.text}>{item.text}</p>
+          <div>
+            <Image src={item.img} width={370} height={260} alt="" />
+            <h3 className={s.title}>{item.title}</h3>
+            <p className={s.text}>{item.text}</p>
+          </div>
           <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
             <Link href={item.link} className={s.link}>
               VIEW MORE
