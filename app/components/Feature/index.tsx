@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import styles from './styles.module.scss'
 const s = styles
 
@@ -41,11 +41,34 @@ const list = [
   },
 ]
 
+const itemVariants: Variants = {
+  offscreen: {
+    y: 100,
+    opacity: 0,
+  },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      bounce: 0.4,
+      duration: 0.8,
+    },
+  },
+}
+
 export const Feature: React.FC = () => {
   return (
     <ul className={s.root}>
       {list.map((item, index) => (
-        <li key={index} className={s.item}>
+        <motion.li
+          key={index}
+          className={s.item}
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={itemVariants}
+        >
           <Image src={item.img} width={370} height={260} alt="" />
           <h3 className={s.title}>{item.title}</h3>
           <p className={s.text}>{item.text}</p>
@@ -54,7 +77,7 @@ export const Feature: React.FC = () => {
               VIEW MORE
             </Link>
           </motion.div>
-        </li>
+        </motion.li>
       ))}
     </ul>
   )
