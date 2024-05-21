@@ -1,4 +1,7 @@
+'use client'
+
 import React from 'react'
+import { motion } from 'framer-motion'
 import styles from './styles.module.scss'
 const s = styles
 
@@ -46,9 +49,11 @@ export const Feature: React.FC = () => {
           <Image src={item.img} width={370} height={260} alt="" />
           <h3 className={s.title}>{item.title}</h3>
           <p className={s.text}>{item.text}</p>
-          <Link href={item.link} className={s.link}>
-            VIEW MORE
-          </Link>
+          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+            <Link href={item.link} className={s.link}>
+              VIEW MORE
+            </Link>
+          </motion.div>
         </li>
       ))}
     </ul>
