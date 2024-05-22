@@ -7,6 +7,7 @@ const s = styles
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { Title } from '@/app/components/Title'
 
 const list = [
   {
@@ -41,46 +42,52 @@ const list = [
   },
 ]
 
-const itemVariants: Variants = {
-  offscreen: {
-    y: 100,
-    opacity: 0,
-  },
-  onscreen: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: 'spring',
-      bounce: 0.4,
-      duration: 0.8,
+const itemVariants = (index: number): Variants => {
+  // index が 3 の場合は 0 にリセット
+  const effectiveIndex = index % 3
+
+  return {
+    offscreen: {
+      opacity: 0,
+      y: 50,
     },
-  },
+    onscreen: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: effectiveIndex * 0.15,
+      },
+    },
+  }
 }
 
 export const Feature: React.FC = () => {
   return (
-    <ul className={s.root}>
-      {list.map((item, index) => (
-        <motion.li
-          key={index}
-          className={s.item}
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={itemVariants}
-        >
-          <div>
-            <Image src={item.img} width={370} height={260} alt="" />
-            <h3 className={s.title}>{item.title}</h3>
-            <p className={s.text}>{item.text}</p>
-          </div>
-          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
-            <Link href={item.link} className={s.link}>
-              VIEW MORE
-            </Link>
-          </motion.div>
-        </motion.li>
-      ))}
-    </ul>
+    <>
+      <Title title="Feature" subTitle="Pitteの特徴" />
+      <ul className={s.root}>
+        {list.map((item, index) => (
+          <motion.li
+            key={index}
+            className={s.item}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={itemVariants(index)}
+          >
+            <div>
+              <Image src={item.img} width={370} height={260} alt="" />
+              <h3 className={s.title}>{item.title}</h3>
+              <p className={s.text}>{item.text}</p>
+            </div>
+            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+              <Link href={item.link} className={s.link}>
+                VIEW MORE
+              </Link>
+            </motion.div>
+          </motion.li>
+        ))}
+      </ul>
+    </>
   )
 }

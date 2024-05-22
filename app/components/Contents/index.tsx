@@ -2,8 +2,8 @@ import React from 'react'
 import styles from './styles.module.scss'
 const s = styles
 
-import { Title } from '@/app/components/Title'
 import { Feature } from '@/app/components/Feature'
+import { Price } from '@/app/components/Price'
 
 export const Contents: React.FC = () => {
   return (
@@ -17,8 +17,8 @@ export const Contents: React.FC = () => {
         <span className="text-highlight">業務用の高品質な脱毛器</span>
         が格安で使い放題◎
       </h1>
-      <Title title="Feature" subTitle="Pitteの特徴" />
       <Feature />
+      <Price />
     </main>
   )
 }

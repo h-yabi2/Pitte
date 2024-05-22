@@ -1,0 +1,25 @@
+@use 'app/_mixin' as *;
+
+.root {
+  background: #d9fcff;
+  overflow: hidden;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+  @include fluidValue1440(row-gap, 57, 40);
+  @include pcOnly {
+    @include fluidValue1440(column-gap, 47, 0);
+  }
+  > li {
+    background: #fff;
+    &:first-child,
+    &:last-child {
+      @include fluidValue1440(width, 800, 370);
+    }
+  }
+}
