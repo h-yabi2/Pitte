@@ -7,16 +7,19 @@
 }
 
 .list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   max-width: 1200px;
   margin: auto;
-  @include fluidValue1440(row-gap, 57, 40);
+  @include fluidValue1440(row-gap, 57, 26);
   @include pcOnly {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     @include fluidValue1440(column-gap, 47, 0);
+  }
+  @include sp {
+    display: flex;
   }
   > li {
     height: 100%;
@@ -24,12 +27,19 @@
     background: #fff;
     &:first-child,
     &:last-child {
-      @include fluidValue1440(width, 800, 370);
+      @include pcOnly {
+        @include fluidValue1440(width, 800, 0);
+      }
+      @include sp {
+        width: 100%;
+      }
       margin: auto;
     }
     &:first-child {
-      grid-column: 1/4;
-      grid-row: 1/2;
+      @include pcOnly {
+        grid-column: 1/4;
+        grid-row: 1/2;
+      }
       .title {
         margin: 0;
         border: none;
@@ -38,13 +48,15 @@
       }
       .contents__title {
         padding: 0.5rem;
-        @include fluidValue1440(font-size, 36, 28);
+        @include fluidValue1440(font-size, 36, 18);
       }
     }
     &:nth-child(2),
     &:nth-child(3),
     &:nth-child(4) {
-      grid-row: 2/3;
+      @include pcOnly {
+        grid-row: 2/3;
+      }
       .contents__list {
         li {
           &:first-child {
@@ -56,8 +68,10 @@
       }
     }
     &:last-child {
-      grid-column: 1/4;
-      grid-row: 3/4;
+      @include pcOnly {
+        grid-column: 1/4;
+        grid-row: 3/4;
+      }
       .contents__list {
         display: flex;
         flex-direction: row;
@@ -74,7 +88,7 @@
   @include fluidValue1440(margin-left, 30, 30);
   border-bottom: 1px solid #23b6c4;
   color: #23b6c4;
-  @include fluidValue1440(font-size, 34, 34);
+  @include fluidValue1440(font-size, 34, 22);
   font-weight: bold;
   text-align: center;
 }
@@ -90,7 +104,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  @include fluidValue1440(row-gap, 10, 0);
+  @include fluidValue1440(row-gap, 10, 10);
 
   li {
     display: flex;
@@ -107,20 +121,20 @@
   padding: 0.25rem;
   background: linear-gradient(to right, #66fe9b, #03e5fc);
   color: #fff;
-  @include fluidValue1440(font-size, 18, 18);
+  @include fluidValue1440(font-size, 18, 14);
   line-height: 1.2;
   text-align: center;
 }
 
 .contents__price {
-  @include fluidValue1440(font-size, 50, 46);
+  @include fluidValue1440(font-size, 50, 26);
   line-height: 1.2;
   span {
-    @include fluidValue1440(font-size, 20, 20);
+    @include fluidValue1440(font-size, 20, 14);
   }
 }
 
 .text {
   margin-top: 0.75rem;
-  @include fluidValue1440(font-size, 16, 20);
+  @include fluidValue1440(font-size, 16, 14);
 }

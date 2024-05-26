@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, Variants } from 'framer-motion'
 import styles from './styles.module.scss'
 const s = styles
@@ -75,9 +75,23 @@ const list = [
   },
 ]
 
-const itemVariants = (index: number): Variants => {
+const useWindowWidth = () => {
+  const [width, setWidth] = useState(0)
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth)
+    window.addEventListener('resize', handleResize)
+    handleResize() // 初期値を設定
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  return width
+}
+
+const itemVariants = (index: number, width: number): Variants => {
   // index が 4 の場合は 0 にリセット
   const effectiveIndex = index % 4
+  const delay = width > 750 ? effectiveIndex * 0.2 : 0
   return {
     offscreen: {
       y: 100,
@@ -90,13 +104,15 @@ const itemVariants = (index: number): Variants => {
         type: 'spring',
         bounce: 0.4,
         duration: 0.8,
-        delay: effectiveIndex * 0.2,
+        delay,
       },
     },
   }
 }
 
 export const Price: React.FC = () => {
+  const width = useWindowWidth()
+
   return (
     <div className={s.root}>
       <Title title="Price" subTitle="料金" />
@@ -108,7 +124,7 @@ export const Price: React.FC = () => {
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.2 }}
-            variants={itemVariants(index)}
+            variants={itemVariants(index, width)}
           >
             <h3 className={s.title}>{item.course}</h3>
             <div className={s.contents}>

@@ -69,7 +69,7 @@ const itemVariants = (index: number, width: number): Variants => {
       opacity: 1,
       y: 0,
       transition: {
-        delay: delay,
+        delay,
       },
     },
   }
