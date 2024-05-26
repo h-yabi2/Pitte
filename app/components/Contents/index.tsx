@@ -7,7 +7,7 @@ import { Price } from '@/app/components/Price'
 
 export const Contents: React.FC = () => {
   return (
-    <main className={'px-4'}>
+    <main>
       <h1 className={s.title}>
         <span className="text-highlight">『東京・綾瀬駅』</span>
         に完全無人の

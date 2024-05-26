@@ -1,13 +1,17 @@
 @use 'app/_mixin' as *;
 
 .root {
+  padding: 1rem;
+  @include fluidValue1440(padding-bottom, 90, 65);
+}
+
+.list {
   display: flex;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   flex-wrap: wrap;
   justify-content: center;
   max-width: 1200px;
   margin: auto;
-  @include fluidValue1440(padding-bottom, 90, 65);
   @include pcOnly {
     @include fluidValue1440(column-gap, 45, 0);
   }

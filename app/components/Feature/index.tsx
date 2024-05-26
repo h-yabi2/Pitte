@@ -79,9 +79,9 @@ export const Feature: React.FC = () => {
   const width = useWindowWidth()
 
   return (
-    <>
+    <div className={s.root}>
       <Title title="Feature" subTitle="Pitteの特徴" />
-      <ul className={s.root}>
+      <ul className={s.list}>
         {list.map((item, index) => (
           <motion.li
             key={index}
@@ -91,7 +91,7 @@ export const Feature: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
             variants={itemVariants(index, width)}
           >
-            <div>
+            <div className="flex flex-col items-center">
               <Image src={item.img} width={370} height={260} alt="" />
               <h3 className={s.title}>{item.title}</h3>
               <p className={s.text}>{item.text}</p>
@@ -104,6 +104,6 @@ export const Feature: React.FC = () => {
           </motion.li>
         ))}
       </ul>
-    </>
+    </div>
   )
 }
