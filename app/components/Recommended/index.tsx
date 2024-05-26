@@ -17,6 +17,24 @@ const list = [
   '<span>老後の介護に備えて</span>脱毛しておきたい',
 ]
 
+const itemVariants = (): Variants => {
+  return {
+    offscreen: {
+      y: 100,
+      opacity: 0,
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        bounce: 0.4,
+        duration: 0.8,
+      },
+    },
+  }
+}
+
 export const Recommended: React.FC = () => {
   return (
     <div className={s.root}>
@@ -24,16 +42,17 @@ export const Recommended: React.FC = () => {
       <div className={`${s.contents} common-radius`}>
         <ul className={`${s.list}`}>
           {list.map((item, index) => (
-            <li key={index}>
+            <motion.li
+              key={index}
+              className={`${s.item}`}
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={itemVariants()}
+            >
               <CheckIcon />
-              <motion.div
-                className="text"
-                dangerouslySetInnerHTML={{ __html: item }}
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.1 * index }}
-              />
-            </li>
+              <motion.div dangerouslySetInnerHTML={{ __html: item }} />
+            </motion.li>
           ))}
         </ul>
         <Image
