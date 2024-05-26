@@ -30,14 +30,14 @@
   // background-clip: text;
   // color: transparent;
   color: #23b6c4;
-  @include fluidValue1440(font-size, 24, 22);
+  @include fluidValue1440(font-size, 24, 20);
   font-weight: bold;
   text-align: center;
 }
 
 .text {
   @include fluidValue1440(margin-bottom, 20, 20);
-  @include fluidValue1440(font-size, 16, 16);
+  @include fluidValue1440(font-size, 16, 14);
 }
 
 .link {
