@@ -55,7 +55,7 @@ const itemVariants = (index: number): Variants => {
       opacity: 1,
       y: 0,
       transition: {
-        delay: effectiveIndex * 0.15,
+        delay: effectiveIndex * 0.2,
       },
     },
   }

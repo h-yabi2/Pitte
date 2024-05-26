@@ -1,13 +1,16 @@
 @use 'app/_mixin' as *;
 
 .root {
+  padding: 1rem;
   background: #d9fcff;
   overflow: hidden;
 }
 
 .list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
   max-width: 1200px;
   margin: auto;
@@ -16,10 +19,108 @@
     @include fluidValue1440(column-gap, 47, 0);
   }
   > li {
+    height: 100%;
+    margin: auto;
     background: #fff;
     &:first-child,
     &:last-child {
       @include fluidValue1440(width, 800, 370);
+      margin: auto;
+    }
+    &:first-child {
+      grid-column: 1/4;
+      grid-row: 1/2;
+      .title {
+        margin: 0;
+        border: none;
+        background: #23b6c4;
+        color: #fff;
+      }
+      .contents__title {
+        padding: 0.5rem;
+        @include fluidValue1440(font-size, 36, 28);
+      }
+    }
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4) {
+      grid-row: 2/3;
+      .contents__list {
+        li {
+          &:first-child {
+            .contents__title {
+              background: #23b6c4;
+            }
+          }
+        }
+      }
+    }
+    &:last-child {
+      grid-column: 1/4;
+      grid-row: 3/4;
+      .contents__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        @include fluidValue1440(column-gap, 20, 0);
+      }
     }
   }
+}
+
+.title {
+  padding: 0.5rem 0;
+  @include fluidValue1440(margin-right, 30, 30);
+  @include fluidValue1440(margin-left, 30, 30);
+  border-bottom: 1px solid #23b6c4;
+  color: #23b6c4;
+  @include fluidValue1440(font-size, 34, 34);
+  font-weight: bold;
+  text-align: center;
+}
+
+.contents {
+  @include fluidValue1440(padding-top, 15, 15);
+  @include fluidValue1440(padding-right, 30, 30);
+  @include fluidValue1440(padding-bottom, 15, 15);
+  @include fluidValue1440(padding-left, 30, 30);
+}
+
+.contents__list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  @include fluidValue1440(row-gap, 10, 0);
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #23b6c4;
+    font-weight: bold;
+  }
+}
+
+.contents__title {
+  display: inline-block;
+  margin-right: 0.5rem;
+  padding: 0.25rem;
+  background: linear-gradient(to right, #66fe9b, #03e5fc);
+  color: #fff;
+  @include fluidValue1440(font-size, 18, 18);
+  line-height: 1.2;
+  text-align: center;
+}
+
+.contents__price {
+  @include fluidValue1440(font-size, 50, 46);
+  line-height: 1.2;
+  span {
+    @include fluidValue1440(font-size, 20, 20);
+  }
+}
+
+.text {
+  margin-top: 0.75rem;
+  @include fluidValue1440(font-size, 16, 20);
 }

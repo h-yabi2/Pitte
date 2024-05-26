@@ -21,11 +21,11 @@ const list = [
     course: '20分コース',
     prices: [
       {
-        title: '通常料金',
+        title: '通常<br />料金',
         price: '3,500',
       },
       {
-        title: '早割料金',
+        title: '早割<br />料金',
         price: '3,000',
       },
     ],
@@ -35,11 +35,11 @@ const list = [
     course: '60分コース',
     prices: [
       {
-        title: '通常料金',
+        title: '通常<br />料金',
         price: '6,000',
       },
       {
-        title: '早割料金',
+        title: '早割<br />料金',
         price: '5,500',
       },
     ],
@@ -50,11 +50,11 @@ const list = [
     course: '90分コース',
     prices: [
       {
-        title: '通常料金',
+        title: '通常<br />料金',
         price: '7,500',
       },
       {
-        title: '早割料金',
+        title: '早割<br />料金',
         price: '7,000',
       },
     ],
@@ -64,31 +64,36 @@ const list = [
     course: '回数券',
     prices: [
       {
-        title: '5回60分',
+        title: '5回<br />60分',
         price: '25,000',
       },
       {
-        title: '10回60分',
+        title: '10回<br />60分',
         price: '40,000',
       },
     ],
   },
 ]
 
-const itemVariants: Variants = {
-  offscreen: {
-    y: 100,
-    opacity: 0,
-  },
-  onscreen: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: 'spring',
-      bounce: 0.4,
-      duration: 0.8,
+const itemVariants = (index: number): Variants => {
+  // index が 4 の場合は 0 にリセット
+  const effectiveIndex = index % 4
+  return {
+    offscreen: {
+      y: 100,
+      opacity: 0,
     },
-  },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        bounce: 0.4,
+        duration: 0.8,
+        delay: effectiveIndex * 0.2,
+      },
+    },
+  }
 }
 
 export const Price: React.FC = () => {
@@ -99,22 +104,31 @@ export const Price: React.FC = () => {
         {list.map((item, index) => (
           <motion.li
             key={index}
-            className={s.item}
+            className={`${s.item} common-radius`}
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.2 }}
-            variants={itemVariants}
+            variants={itemVariants(index)}
           >
-            <h3>{item.course}</h3>
-            {item.text && <p>{item.text}</p>}
-            <ul>
-              {item.prices.map((price, index) => (
-                <li key={index}>
-                  <span>{price.title}</span>
-                  <span>{price.price}円</span>
-                </li>
-              ))}
-            </ul>
+            <h3 className={s.title}>{item.course}</h3>
+            <div className={s.contents}>
+              <ul className={s.contents__list}>
+                {item.prices.map((price, index) => (
+                  <li key={index}>
+                    {/* dangerouslySetInnerHTML　を使用 */}
+                    <span
+                      className={s.contents__title}
+                      dangerouslySetInnerHTML={{ __html: price.title }}
+                    />
+                    <span className={s.contents__price}>
+                      {price.price}
+                      <span>円(税込)</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              {item.text && <p className={s.text}>{item.text}</p>}
+            </div>
           </motion.li>
         ))}
       </ul>
