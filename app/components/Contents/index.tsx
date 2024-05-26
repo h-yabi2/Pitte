@@ -4,6 +4,7 @@ const s = styles
 
 import { Feature } from '@/app/components/Feature'
 import { Price } from '@/app/components/Price'
+import { Recommended } from '@/app/components/Recommended'
 
 export const Contents: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ export const Contents: React.FC = () => {
       </h1>
       <Feature />
       <Price />
+      <Recommended />
     </main>
   )
 }

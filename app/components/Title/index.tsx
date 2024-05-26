@@ -5,7 +5,7 @@ const s = styles
 interface TitleProps {
   title: string
   subTitle: string
-  color?: ['default' | 'white']
+  color?: 'default' | 'white'
 }
 
 export const Title: React.FC<TitleProps> = ({

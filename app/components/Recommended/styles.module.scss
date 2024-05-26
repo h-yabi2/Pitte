@@ -1,0 +1,64 @@
+@use 'app/_mixin' as *;
+
+.root {
+  padding: 1rem;
+  @include fluidValue1440(padding-bottom, 90, 65);
+  background: linear-gradient(to right, #66fe9b, #03e5fc);
+  overflow: hidden;
+}
+
+.contents {
+  position: relative;
+  @include fluidValue1440(width, 1200, 345);
+  margin: auto;
+  background: #fff;
+  @include pcOnly {
+    @include fluidValue1440(padding, 64, 20);
+  }
+  @include sp {
+    @include fluidValue1440(padding-top, 0, 30);
+    @include fluidValue1440(padding-right, 0, 20);
+    @include fluidValue1440(padding-left, 0, 20);
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  @include fluidValue1440(row-gap, 30, 15);
+
+  span {
+    background: linear-gradient(transparent 60%, yellow 60%);
+  }
+  li {
+    display: flex;
+    @include fluidValue1440(column-gap, 15, 5);
+    @include fluidValue1440(font-size, 24, 14);
+    font-weight: bold;
+    line-height: 1.5;
+  }
+  img {
+    position: relative;
+    @include fluidValue1440(top, 7, 4);
+    @include fluidValue1440(width, 35, 35);
+    @include fluidValue1440(height, 30, 20);
+  }
+}
+
+.image {
+  @include pcOnly {
+    position: absolute;
+    @include fluidValue1440(right, 70, 0);
+    @include fluidValue1440(bottom, 0, 0);
+  }
+  @include fluidValue1440(width, 369, 244);
+  @include sp {
+    margin: auto;
+  }
+}
+
+.text {
+  @include fluidValue1440(width, 663, 330);
+  margin: auto;
+  @include fluidValue1440(margin-top, 47, 40);
+}
