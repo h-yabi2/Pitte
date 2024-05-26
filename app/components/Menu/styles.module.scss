@@ -1,8 +1,13 @@
+@use 'app/_mixin' as *;
+
 .root {
   position: fixed;
   z-index: 1000;
-  top: 15px;
+  top: 22px;
   right: 15px;
+  @include sp {
+    top: 17px;
+  }
 }
 
 .nav {
@@ -14,7 +19,7 @@
 .inner {
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100vw;
   height: 100vh;
   pointer-events: none;

@@ -1,0 +1,10 @@
+@use 'app/_mixin' as *;
+
+.logo {
+  @include pcOnly {
+    width: 160px;
+  }
+  @include sp {
+    width: 150px;
+  }
+}
