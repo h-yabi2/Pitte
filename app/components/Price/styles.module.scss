@@ -99,7 +99,7 @@
 .contents {
   @include fluidValue1440(padding-top, 15, 15);
   @include fluidValue1440(padding-right, 30, 30);
-  @include fluidValue1440(padding-bottom, 15, 15);
+  @include fluidValue1440(padding-bottom, 25, 25);
   @include fluidValue1440(padding-left, 30, 30);
 }
 
