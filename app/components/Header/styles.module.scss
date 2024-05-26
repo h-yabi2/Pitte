@@ -2,7 +2,7 @@
 
 .logo {
   @include pcOnly {
-    width: 160px;
+    width: 150px;
   }
   @include sp {
     width: 150px;
