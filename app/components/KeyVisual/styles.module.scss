@@ -1,13 +1,17 @@
 .root {
-    background: linear-gradient(to right, #66FE9B, #03E5FC);
-    img {
-        max-width: 1287px;
-        margin: 0 3px 0 auto;
-    }
+  background: linear-gradient(to right, #66fe9b, #03e5fc);
+  img {
+    max-width: 1287px;
+    margin: 0 3px 0 auto;
+  }
 }
 
-
 .inner {
-    max-width: 1400px;
-    margin: auto;    
+  max-width: 1400px;
+  margin: auto;
+}
+
+.image {
+  width: 100%;
+  height: auto;
 }

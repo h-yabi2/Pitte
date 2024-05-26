@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, Variants } from 'framer-motion'
 import styles from './styles.module.scss'
 const s = styles
@@ -42,9 +42,23 @@ const list = [
   },
 ]
 
-const itemVariants = (index: number): Variants => {
+const useWindowWidth = () => {
+  const [width, setWidth] = useState(0)
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth)
+    window.addEventListener('resize', handleResize)
+    handleResize()
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  return width
+}
+
+const itemVariants = (index: number, width: number): Variants => {
   // index が 3 の場合は 0 にリセット
   const effectiveIndex = index % 3
+  const delay = width > 750 ? effectiveIndex * 0.2 : 0
 
   return {
     offscreen: {
@@ -55,13 +69,15 @@ const itemVariants = (index: number): Variants => {
       opacity: 1,
       y: 0,
       transition: {
-        delay: effectiveIndex * 0.2,
+        delay: delay,
       },
     },
   }
 }
 
 export const Feature: React.FC = () => {
+  const width = useWindowWidth()
+
   return (
     <>
       <Title title="Feature" subTitle="Pitteの特徴" />
@@ -73,7 +89,7 @@ export const Feature: React.FC = () => {
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.3 }}
-            variants={itemVariants(index)}
+            variants={itemVariants(index, width)}
           >
             <div>
               <Image src={item.img} width={370} height={260} alt="" />

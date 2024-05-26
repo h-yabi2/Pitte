@@ -17,15 +17,19 @@
     flex-direction: column;
     justify-content: space-between;
     @include fluidValue1440(width, 370, 370);
+    @include sp {
+      width: 100%;
+    }
   }
 }
 
 .title {
-  @include fluidValue1440(margin-top, 20, 20);
+  @include fluidValue1440(margin-top, 20, 15);
   @include fluidValue1440(margin-bottom, 10, 10);
-  background: linear-gradient(to right, #66fe9b, #03e5fc);
-  background-clip: text;
-  color: transparent;
+  // background: linear-gradient(to right, #66fe9b, #03e5fc);
+  // background-clip: text;
+  // color: transparent;
+  color: #23b6c4;
   @include fluidValue1440(font-size, 24, 22);
   font-weight: bold;
   text-align: center;
@@ -41,16 +45,16 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  @include fluidValue1440(width, 220, 370);
   margin-top: auto;
   margin-right: auto;
   margin-left: auto;
-  @include fluidValue1440(height, 50, 20);
+  @include fluidValue1440(height, 50, 50);
   border-radius: 25px;
   background: linear-gradient(to right, #66fe9b, #03e5fc);
   color: #fff;
   @include fluidValue1440(font-size, 14, 14);
   font-weight: bold;
+  @include fluidValue1440(width, 220, 230);
 }
 
 // .root {

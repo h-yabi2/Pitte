@@ -2,8 +2,11 @@
 
 .title {
   @include fluidValue1440(margin-top, 80, 30);
-  @include fluidValue1440(font-size, 30, 24);
+  @include fluidValue1440(font-size, 30, 20);
   font-weight: bold;
   text-align: center;
   line-height: 2;
+  @include sp {
+    line-height: 1.7;
+  }
 }

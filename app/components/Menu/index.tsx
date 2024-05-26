@@ -15,7 +15,7 @@ const sidebar = {
     clipPath: `circle(${height * 2 + 200}px at calc(100% - 40px) 40px)`, // 右上から開始
     transition: {
       type: 'spring',
-      stiffness: 35,
+      stiffness: 25,
       restDelta: 2,
     },
   }),

@@ -1,3 +1,6 @@
+// _mixin をインポート
+@use 'app/_mixin' as *;
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +8,19 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+.mediaPC {
+  @include sp {
+    display: none;
+  }
+}
+
+.mediaSP {
+  display: none;
+  @include sp {
+    display: block;
   }
 }
 
