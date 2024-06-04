@@ -131,7 +131,7 @@
 }
 
 .contents__price {
-  @include fluidValue1440(font-size, 50, 20);
+  @include fluidValue1440(font-size, 50, 24);
   line-height: 1.2;
   span {
     @include fluidValue1440(font-size, 20, 12);
