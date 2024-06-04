@@ -20,7 +20,7 @@ import { CheckIcon } from '@/app/components/CheckIcon'
 const itemVariantsForLi = (): Variants => {
   return {
     offscreen: {
-      y: 100,
+      y: 50,
       opacity: 0,
     },
     onscreen: {

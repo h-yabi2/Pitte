@@ -7,6 +7,7 @@ const s = styles
 import { Feature } from '@/app/components/Feature'
 import { Price } from '@/app/components/Price'
 import { Recommended } from '@/app/components/Recommended'
+import { StrongPoint } from '@/app/components/StrongPoint'
 import { motion, Variants } from 'framer-motion'
 
 const animationProps = {
@@ -74,6 +75,7 @@ export const Contents: React.FC = () => {
       <Feature />
       <Price />
       <Recommended />
+      <StrongPoint />
     </main>
   )
 }
