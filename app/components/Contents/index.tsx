@@ -14,7 +14,7 @@ const animationProps = {
   style: {
     backgroundImage: 'linear-gradient(transparent, 70%, yellow 70%)',
     backgroundRepeat: 'no-repeat',
-    transition: 'background-size 0.5s',
+    transition: 'background-size 0.3s',
   },
   viewport: {
     once: true,
