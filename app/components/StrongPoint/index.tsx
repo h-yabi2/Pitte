@@ -71,7 +71,7 @@ export const StrongPoint: React.FC = () => {
 
   return (
     <div className={s.root}>
-      <Title title="Strong Point" subTitle="料金" />
+      <Title title="Strong Point" subTitle="選ばれる4つの理由" />
       <ul className={s.list}>
         {list.map((item, index) => (
           <motion.li
