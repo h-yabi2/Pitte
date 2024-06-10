@@ -60,7 +60,7 @@ html {
   transform: translate(-50%, -50%);
   color: #fff;
   perspective: 100px;
-  @include fluidValue1440(font-size, 24, 20);
+  @include fluidValue1440(font-size, 40, 30);
   font-weight: bold;
   > span {
     animation: flip 2s infinite;

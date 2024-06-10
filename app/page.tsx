@@ -14,7 +14,11 @@ export default function Home() {
         className="loading"
         key="loading"
         initial={{ opacity: 1 }}
-        animate={{ opacity: 0 }}
+        animate={{
+          opacity: 0,
+          visibility: 'hidden',
+          transition: { delay: 0.3 },
+        }}
         exit={{ opacity: 1 }}
       >
         <span>L</span>
@@ -29,7 +33,7 @@ export default function Home() {
         initial={{ scaleX: 1 }}
         animate={{
           scaleX: 0,
-          transition: { duration: 0.5, delay: 0.3, ease: 'circOut' },
+          transition: { duration: 0.5, delay: 0.7, ease: 'circOut' },
         }}
         exit={{ scaleX: 1, transition: { duration: 0.5, ease: 'circIn' } }}
         style={{ originX: isPresent ? 0 : 1 }}
