@@ -1,6 +1,6 @@
 @use 'app/_mixin' as *;
 
-.root {
+.recommended {
   padding: 1rem 1.5rem;
   @include fluidValue1440(padding-bottom, 90, 65);
   background: linear-gradient(to right, #66fe9b, #03e5fc);
@@ -9,10 +9,10 @@
 
 .contents {
   position: relative;
-  @include fluidValue1440(width, 1200, 345);
   margin: auto;
   background: #fff;
   @include pcOnly {
+    @include fluidValue1440(width, 1200, 345);
     @include fluidValue1440(padding, 64, 20);
   }
   @include sp {
@@ -49,11 +49,12 @@
   @include pcOnly {
     position: absolute;
     @include fluidValue1440(right, 70, 0);
-    @include fluidValue1440(bottom, 0, 0);
+    @include fluidValue1440(bottom, -2, 0);
   }
   @include fluidValue1440(width, 369, 244);
   @include sp {
     margin: auto;
+    margin-bottom: -1px;
   }
 }
 
