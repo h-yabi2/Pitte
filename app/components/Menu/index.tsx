@@ -47,7 +47,7 @@ export const Menu = () => {
         <MenuToggle toggle={() => toggleOpen()} />
         <div className={`${s.inner} ${isOpen ? s.isOpen : s.isClosed}`}>
           <motion.div className={s.background} variants={sidebar} />
-          <Navigation />
+          <Navigation clickHandler={() => toggleOpen()} />
         </div>
       </motion.nav>
     </div>

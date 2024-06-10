@@ -26,7 +26,12 @@ const menuItems = [
   { text: '選ばれる4つの理由', href: '#about' },
 ]
 
-export const MenuItem = ({ i }: { i: number }) => {
+interface MenuItemProps {
+  clickHandler: () => void
+  i: number
+}
+
+export const MenuItem = ({ clickHandler, i }: MenuItemProps) => {
   return (
     <>
       {menuItems.map((item, index) => (
@@ -35,6 +40,7 @@ export const MenuItem = ({ i }: { i: number }) => {
           variants={variants}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
+          onClick={clickHandler}
         >
           <Link href={item.href}>{item.text}</Link>
         </motion.li>
