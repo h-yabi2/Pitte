@@ -19,7 +19,7 @@ interface NavigationProps {
 }
 
 export const Navigation = ({ clickHandler }: NavigationProps) => (
-  <motion.ul variants={variants} className={`${s.root}`}>
+  <motion.ul variants={variants} className={`${s.navigation}`}>
     {itemIds.map((i) => (
       <MenuItem i={i} key={i} clickHandler={clickHandler} />
     ))}
