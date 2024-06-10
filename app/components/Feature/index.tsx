@@ -82,7 +82,7 @@ export const Feature: React.FC = () => {
   const width = useWindowWidth()
 
   return (
-    <div className={s.root}>
+    <div id="feature" className={s.root}>
       <Title title="Feature" subTitle="Pitteの特徴" />
       <ul className={s.list}>
         {list.map((item, index) => (

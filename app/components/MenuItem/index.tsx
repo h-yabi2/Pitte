@@ -22,8 +22,8 @@ const variants = {
 const menuItems = [
   { text: 'Pitteの特徴', href: '#feature' },
   { text: '料金', href: '#price' },
-  { text: 'こんな方におすすめ', href: '#about' },
-  { text: '選ばれる4つの理由', href: '#about' },
+  { text: 'こんな方におすすめ', href: '#recommended' },
+  { text: '選ばれる4つの理由', href: '#strongPoint' },
 ]
 
 interface MenuItemProps {

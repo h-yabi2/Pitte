@@ -72,7 +72,7 @@ const animationPropsForSpan = {
 
 export const Recommended: React.FC = () => {
   return (
-    <div className={s.root}>
+    <div id="recommended" className={s.root}>
       <Title title="Recommended" subTitle="こんな方におすすめ" color="white" />
       <div className={`${s.contents} common-radius`}>
         <ul className={`${s.list}`}>

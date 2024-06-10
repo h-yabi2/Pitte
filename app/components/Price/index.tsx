@@ -114,7 +114,7 @@ export const Price: React.FC = () => {
   const width = useWindowWidth()
 
   return (
-    <div className={s.root}>
+    <div id="price" className={s.root}>
       <Title title="Price" subTitle="料金" />
       <ul className={s.list}>
         {list.map((item, index) => (

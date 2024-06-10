@@ -67,10 +67,8 @@ const itemVariants = (): Variants => {
 }
 
 export const StrongPoint: React.FC = () => {
-  const width = useWindowWidth()
-
   return (
-    <div className={s.root}>
+    <div id="strongPoint" className={s.root}>
       <Title title="Strong Point" subTitle="選ばれる4つの理由" />
       <ul className={s.list}>
         {list.map((item, index) => (
