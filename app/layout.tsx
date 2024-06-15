@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Zen_Kaku_Gothic_New } from 'next/font/google'
 import { Header } from '@/app/components/Header'
 import { Footer } from '@/app/components/Footer'
+import { ToTopButton } from '@/app/components/ToTopButton'
 import './globals.scss'
 
 const zenKakuGothicNew = Zen_Kaku_Gothic_New({
@@ -30,10 +31,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={zenKakuGothicNew.className}>
+      <body id="top" className={zenKakuGothicNew.className}>
         <Header />
         {children}
         <Footer />
+        <ToTopButton />
       </body>
     </html>
   )
