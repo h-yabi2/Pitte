@@ -35,7 +35,7 @@ const list = [
     link: '/',
   },
   {
-    img: '/images/feature05.png',
+    img: '/images/feature05-2.png',
     title: '最短6ヶ月で全身脱毛',
     text: '予約のとりにくいサロン式の脱毛では長期間になりがちですが、自分の予定に合わせた予約がとれるセルフ脱毛なら完了期間も大幅短縮できます！',
     link: '/',
