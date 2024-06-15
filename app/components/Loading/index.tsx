@@ -7,7 +7,7 @@ const s = styles
 export const Loading = () => {
   return (
     <motion.div
-      className="loading"
+      className={s.loading}
       key="loading"
       initial={{ opacity: 1 }}
       animate={{

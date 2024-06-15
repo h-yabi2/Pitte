@@ -1,0 +1,11 @@
+@use 'app/_mixin' as *;
+
+.pageScreen {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, #66fe9b, #03e5fc);
+}
