@@ -29,9 +29,9 @@ const list = [
     link: '/',
   },
   {
-    img: '/images/feature04.png',
+    img: '/images/feature04-2.png',
     title: '綾瀬駅から徒歩○分',
-    text: '高額なサロンとは違い、都度払い・回数券購入が選べて無理なく通えます♪',
+    text: '綾瀬駅から徒歩○分とアクセスも抜群！お仕事帰りやお買い物ついでに気軽に立ち寄れます。',
     link: '/',
   },
   {
