@@ -31,13 +31,13 @@ const list = [
   {
     img: '/images/feature04-2.png',
     title: '綾瀬駅から徒歩○分',
-    text: '綾瀬駅から徒歩○分とアクセスも抜群！お仕事帰りやお買い物ついでに気軽に立ち寄れます。',
+    text: '綾瀬駅から徒歩○分とアクセスも抜群！<br />お仕事帰りやお買い物ついでに気軽に立ち寄れます。',
     link: '/',
   },
   {
     img: '/images/feature05-2.png',
-    title: '最短6ヶ月で全身脱毛',
-    text: '予約のとりにくいサロン式の脱毛では長期間になりがちですが、自分の予定に合わせた予約がとれるセルフ脱毛なら完了期間も大幅短縮できます！',
+    title: '総額4万円で全身脱毛が完了◎',
+    text: '<span class="font-bold">綾瀬・亀有地区での最安値を宣言</span>！！<br />今時、脱毛はセルフで安く済ませる時代♪<br />※回数券（15回）40,000円を購入時を想定',
     link: '/',
   },
 ]
@@ -97,7 +97,10 @@ export const Feature: React.FC = () => {
             <div className="flex flex-col items-center">
               <Image src={item.img} width={370} height={260} alt="" />
               <h3 className={s.title}>{item.title}</h3>
-              <p className={s.text}>{item.text}</p>
+              <p
+                className={s.text}
+                dangerouslySetInnerHTML={{ __html: item.text }}
+              />
             </div>
             <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
               <Link href={item.link} className={s.link}>
