@@ -8,11 +8,10 @@ const nextConfig = {
     return config
   },
   images: {},
-  webpack(config, options) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack'],
-    })
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      config.cache = false
+    }
     return config
   },
   images: {},
