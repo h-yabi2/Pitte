@@ -47,6 +47,9 @@
         background: #23b6c4;
         color: #fff;
       }
+      .text {
+        text-align: center;
+      }
       .contents__title {
         padding: 0.5rem;
         @include fluidValue1440(font-size, 36, 18);

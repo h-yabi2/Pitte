@@ -16,6 +16,7 @@ const list = [
         price: '1,000',
       },
     ],
+    text: '初めての方におすすめ！<br class="mediaSP" />気軽に脱毛を体験できます！<br />なんと、<span class="font-bold">ペア来店でも料金はそのまま！！</span>',
   },
   {
     course: '20分コース',
@@ -29,21 +30,21 @@ const list = [
         price: '3,000',
       },
     ],
-    text: 'ワキやヒゲなどお悩みの部位をピンポイントで脱毛したい方におすすめ',
+    text: 'ワキやヒゲなどお悩みの部位をピンポイントで脱毛したい方におすすめ◎',
   },
   {
     course: '60分コース',
     prices: [
       {
         title: '通常<br />料金',
-        price: '6,000',
+        price: '5,500',
       },
       {
         title: '早割<br />料金',
-        price: '5,500',
+        price: '5,000',
       },
     ],
-    text: 'サクッと全身脱毛を済ませたい方におすすめ',
+    text: 'サクッと全身脱毛を済ませたい方におすすめ◎',
     popularity: true,
   },
   {
@@ -58,20 +59,21 @@ const list = [
         price: '7,000',
       },
     ],
-    text: 'ペア来店やじっくり脱毛したい方におすすめ',
+    text: 'ペア来店やじっくり脱毛したい方におすすめ◎',
   },
   {
     course: '回数券',
     prices: [
       {
         title: '5回<br />60分',
-        price: '25,000',
+        price: '20,000',
       },
       {
         title: '10回<br />60分',
-        price: '40,000',
+        price: '30,000',
       },
     ],
+    text: 'お得な回数券でお好きなタイミングでご利用いただけます！',
   },
 ]
 
@@ -143,7 +145,12 @@ export const Price: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              {item.text && <p className={s.text}>{item.text}</p>}
+              {item.text && (
+                <p
+                  className={s.text}
+                  dangerouslySetInnerHTML={{ __html: item.text }}
+                />
+              )}
             </div>
           </motion.li>
         ))}
