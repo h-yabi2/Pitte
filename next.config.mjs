@@ -8,12 +8,12 @@ const nextConfig = {
     return config
   },
   images: {},
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      config.cache = false
-    }
-    return config
-  },
+  // webpack: (config, { isServer }) => {
+  //   if (isServer) {
+  //     config.cache = false
+  //   }
+  //   return config
+  // },
   images: {},
   headers: [
     {
