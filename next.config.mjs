@@ -19,12 +19,11 @@ const nextConfig = {
   headers: [
     {
       source: '/(.*)',
-      headers: [
-        {
-          key: 'Cache-Control',
-          value: 's-maxage=1, stale-while-revalidate=59',
-        },
-      ],
+      headers: {
+        'Cache-Control': 'no-store',
+        'CDN-Cache-Control': 'no-store',
+        'Vercel-CDN-Cache-Control': 'no-store',
+      },
     },
   ],
 }
